@@ -16,8 +16,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #fef8f5;  /* fundo claro e aconchegante */
-            color: #2d1b14;
+            background: #0b0a14; /* fundo preto/azul escuro */
+            color: #f0f0f5;
             line-height: 1.6;
         }
 
@@ -27,13 +27,13 @@
             padding: 0 24px;
         }
 
-        /* HEADER com a logo */
+        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 3px solid #e8b4a2; /* tom rosê da logo */
+            border-bottom: 3px solid #ff3b8a; /* rosa vibrante */
             flex-wrap: wrap;
             gap: 12px;
         }
@@ -52,24 +52,24 @@
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 700;
-            color: #a6533e; /* tom terroso/quente */
+            color: #ff3b8a; /* rosa principal */
             letter-spacing: -0.5px;
         }
 
         .logo h1 span {
-            color: #c2795e; /* tom mais claro */
+            color: #ff85b3; /* rosa claro */
         }
 
         .logo p {
             font-size: 13px;
-            color: #7a5a4a;
+            color: #9a9aaf;
             letter-spacing: 2px;
             font-weight: 400;
             margin-top: 2px;
         }
 
         .cta-header a {
-            background: #a6533e;
+            background: #ff3b8a;
             color: #fff;
             padding: 10px 24px;
             border-radius: 40px;
@@ -81,7 +81,7 @@
         }
 
         .cta-header a:hover {
-            background: #c2795e;
+            background: #ff85b3;
             transform: scale(1.03);
         }
 
@@ -101,8 +101,8 @@
 
         .hero-text .badge {
             display: inline-block;
-            background: #f5e1d9;
-            color: #a6533e;
+            background: rgba(255, 59, 138, 0.15);
+            color: #ff85b3;
             padding: 6px 18px;
             border-radius: 50px;
             font-size: 14px;
@@ -119,18 +119,18 @@
         }
 
         .hero-text h2 span {
-            color: #a6533e;
+            color: #ff3b8a;
         }
 
         .hero-text p {
             font-size: 18px;
-            color: #5a4036;
+            color: #b0b0c8;
             max-width: 460px;
             margin-bottom: 28px;
         }
 
         .hero-text .btn-principal {
-            background: #a6533e;
+            background: #ff3b8a;
             color: #fff;
             padding: 16px 40px;
             border-radius: 60px;
@@ -139,13 +139,13 @@
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
-            box-shadow: 0 8px 30px rgba(166, 83, 62, 0.3);
+            box-shadow: 0 8px 30px rgba(255, 59, 138, 0.3);
         }
 
         .hero-text .btn-principal:hover {
-            background: #c2795e;
+            background: #ff85b3;
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(166, 83, 62, 0.4);
+            box-shadow: 0 12px 40px rgba(255, 59, 138, 0.4);
         }
 
         .hero-image {
@@ -158,16 +158,16 @@
             width: 100%;
             max-width: 400px;
             aspect-ratio: 1/1;
-            background: linear-gradient(145deg, #fce9e2, #f5d6cb);
+            background: radial-gradient(circle at 30% 30%, #1c1a2e, #0b0a14);
             border-radius: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             font-size: 80px;
-            border: 2px solid #e8b4a2;
-            box-shadow: 0 20px 60px rgba(166, 83, 62, 0.15);
-            color: #a6533e;
+            border: 2px solid rgba(255, 59, 138, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            color: #ff3b8a;
             text-align: center;
             padding: 20px;
         }
@@ -175,14 +175,14 @@
         .hero-image .ilustracao span {
             font-size: 24px;
             font-weight: 300;
-            color: #7a5a4a;
+            color: #9a9aaf;
             margin-top: 10px;
         }
 
         /* CARDÁPIO */
         .cardapio {
             padding: 60px 0;
-            border-top: 1px solid #e8d5cc;
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
 
         .cardapio .titulo-secao {
@@ -197,11 +197,11 @@
         }
 
         .cardapio .titulo-secao h3 span {
-            color: #a6533e;
+            color: #ff3b8a;
         }
 
         .cardapio .titulo-secao p {
-            color: #7a5a4a;
+            color: #9a9aaf;
             font-size: 16px;
             margin-top: 8px;
         }
@@ -213,49 +213,50 @@
         }
 
         .item-doce {
-            background: #fff;
-            border: 1px solid #f0dbd2;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: 24px;
             padding: 24px 16px;
             text-align: center;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(166, 83, 62, 0.06);
+            backdrop-filter: blur(4px);
         }
 
         .item-doce:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255, 59, 138, 0.3);
             transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(166, 83, 62, 0.12);
-            border-color: #e8b4a2;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
 
         .item-doce .foto-placeholder {
             width: 100%;
             height: 120px;
-            background: #fcf1ec;
+            background: #14131f;
             border-radius: 16px;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 44px;
-            border: 1px dashed #e8b4a2;
+            border: 1px dashed rgba(255, 59, 138, 0.2);
         }
 
         .item-doce h4 {
             font-size: 18px;
             font-weight: 600;
-            color: #2d1b14;
+            color: #f0f0f5;
         }
 
         .item-doce .preco {
             font-size: 26px;
             font-weight: 700;
-            color: #a6533e;
+            color: #ff3b8a;
             margin-top: 4px;
         }
 
         .item-doce .destaque {
-            background: #a6533e;
+            background: #ff3b8a;
             color: #fff;
             font-size: 11px;
             font-weight: 700;
@@ -269,11 +270,11 @@
 
         /* BANNER PEDIDO */
         .banner-pedido {
-            background: linear-gradient(145deg, #fce9e2, #f5d6cb);
+            background: linear-gradient(145deg, #14131f, #1c1a2e);
             border-radius: 40px;
             padding: 50px 40px;
             margin: 40px 0 60px;
-            border: 1px solid #e8b4a2;
+            border: 1px solid rgba(255, 59, 138, 0.2);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -292,11 +293,11 @@
         }
 
         .banner-pedido .info h3 span {
-            color: #a6533e;
+            color: #ff3b8a;
         }
 
         .banner-pedido .info p {
-            color: #5a4036;
+            color: #b0b0c8;
             font-size: 16px;
             margin-top: 8px;
         }
@@ -326,7 +327,7 @@
 
         .banner-pedido .cta-whats small {
             display: block;
-            color: #7a5a4a;
+            color: #9a9aaf;
             margin-top: 10px;
             font-size: 14px;
         }
@@ -334,16 +335,16 @@
         .banner-pedido .cta-whats .telefone-destaque {
             font-size: 22px;
             font-weight: 700;
-            color: #a6533e;
+            color: #ff3b8a;
             margin-top: 4px;
         }
 
         /* RODAPÉ */
         footer {
-            border-top: 1px solid #e8d5cc;
+            border-top: 1px solid rgba(255,255,255,0.06);
             padding: 30px 0;
             text-align: center;
-            color: #7a5a4a;
+            color: #7a7a92;
             font-size: 14px;
         }
 
@@ -351,7 +352,7 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 20px;
-            color: #a6533e;
+            color: #ff3b8a;
         }
 
         /* WHATSAPP FLUTUANTE */
@@ -412,7 +413,7 @@
 </head>
 <body>
 
-    <!-- HEADER com a logo -->
+    <!-- HEADER -->
     <div class="container">
         <header>
             <div class="logo">
