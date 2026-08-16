@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEVALIER CARD · Agência de IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0a14;
+            color: #f0f0f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo h1 span {
+            color: #f5c842;
+        }
+
+        .logo p {
+            font-size: 13px;
+            color: #9a9aaf;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .cta-header a {
+            background: #f5c842;
+            color: #0b0a14;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-header a:hover {
+            background: #ffe074;
+            transform: scale(1.03);
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0 60px;
+            gap: 30px;
+        }
+
+        .hero-text {
+            flex: 1 1 500px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: rgba(245, 200, 66, 0.15);
+            color: #f5c842;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h2 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h2 span {
+            color: #f5c842;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #b0b0c8;
+            max-width: 480px;
+            margin-bottom: 28px;
+        }
+
+        .hero-text .btn-principal {
+            background: #f5c842;
+            color: #0b0a14;
+            padding: 16px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(245, 200, 66, 0.25);
+        }
+
+        .hero-text .btn-principal:hover {
+            background: #ffe074;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(245, 200, 66, 0.4);
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        /* SERVIÇOS */
+        .servicos {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .servicos .titulo-secao {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .servicos .titulo-secao h3 {
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        .servicos .titulo-secao h3 span {
+            color: #f5c842;
+        }
+
+        .servicos .titulo-secao p {
+            color: #9a9aaf;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card-servico {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: 0.3s;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-servico:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(245, 200, 66, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-servico .icone {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: #f5c842;
+        }
+
+        .card-servico .icone img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .card-servico h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-servico .preco {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f5c842;
+            margin: 10px 0 12px;
+        }
+
+        .card-servico ul {
+            list-style: none;
+            font-size: 15px;
+            color: #c5c5dd;
+            line-height: 1.8;
+        }
+
+        .card-servico ul li::before {
+            content: "✦ ";
+            color: #f5c842;
+        }
+
+        /* PACOTE COMPLETO */
+        .pacote-completo {
+            background: linear-gradient(145deg, #14131f, #1c1a2e);
+            border-radius: 40px;
+            padding: 50px 40px;
+            margin: 40px 0 60px;
+            border: 1px solid rgba(245, 200, 66, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .pacote-completo .info {
+            flex: 1 1 400px;
+        }
+
+        .pacote-completo .info h3 {
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        .pacote-completo .info h3 span {
+            color: #f5c842;
+        }
+
+        .pacote-completo .info .preco-grande {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f5c842;
+            margin: 12px 0;
+        }
+
+        .pacote-completo .info ul {
+            list-style: none;
+            font-size: 16px;
+            color: #c5c5dd;
+            line-height: 2;
+        }
+
+        .pacote-completo .info ul li::before {
+            content: "✓ ";
+            color: #f5c842;
+            font-weight: 700;
+        }
+
+        .pacote-completo .cta-pacote {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .pacote-completo .cta-pacote .btn-whats {
+            background: #25D366;
+            color: #fff;
+            padding: 18px 44px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .pacote-completo .cta-pacote .btn-whats:hover {
+            background: #2ee673;
+            transform: scale(1.02);
+        }
+
+        .pacote-completo .cta-pacote small {
+            display: block;
+            color: #9a9aaf;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* DIFERENCIAIS */
+        .diferenciais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px 0 50px;
+            text-align: center;
+        }
+
+        .diferenciais .item {
+            background: rgba(255,255,255,0.02);
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .diferenciais .item .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f5c842;
+        }
+
+        .diferenciais .item p {
+            color: #b0b0c8;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 30px 0;
+            text-align: center;
+            color: #7a7a92;
+            font-size: 14px;
+        }
+
+        footer .logo-rodape {
+            font-weight: 700;
+            font-size: 18px;
+            color: #f5c842;
+        }
+
+        footer a {
+            color: #f5c842;
+            text-decoration: none;
+        }
+
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 60px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background: #2ee673;
+        }
+
+        .whatsapp-float .icone-wpp {
+            font-size: 28px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .hero-text h2 { font-size: 32px; }
+            .pacote-completo { padding: 30px 20px; }
+            .pacote-completo .info h3 { font-size: 26px; }
+            .pacote-completo .info .preco-grande { font-size: 36px; }
+            .whatsapp-float { padding: 10px 16px; font-size: 14px; }
+            .cta-header a { padding: 8px 16px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>⭐ <span>DIGITAL</span> CHEVALIER CARD</h1>
+                <p>AGÊNCIA DE INTELIGÊNCIA ARTIFICIAL</p>
+            </div>
+            <div class="cta-header">
+                <a href="#">+7 ANOS</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero container">
+        <div class="hero-text">
+            <span class="badge">🏆 IDENTIDADE VISUAL PROFISSIONAL</span>
+            <h2>Sua marca <span>merece destaque</span> com exclusividade</h2>
+            <p>Logomarca, capas e edição de imagens com qualidade de agência. Tudo entregue com rapidez e compromisso.</p>
+            <a href="#" class="btn-principal">QUERO MEU PACOTE →</a>
+        </div>
+        <div class="hero-image">
+            <!-- Substitua src pela sua ilustração principal (ex: mockup de cartão ou identidade) -->
+            <img src="https://placehold.co/500x400/1c1a2e/f5c842?text=Identidade+Visual" alt="Identidade Visual">
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos container">
+        <div class="titulo-secao">
+            <h3>Nossos <span>serviços</span></h3>
+            <p>Escolha o que precisa ou leve o pacote completo com bônus</p>
+        </div>
+
+        <div class="grid-servicos">
+            <!-- Logomarca -->
+            <div class="card-servico">
+                <div class="icone">
+                    <!-- Ícone ilustrativo (SVG) -->
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h4>🎨 Logomarca</h4>
+                <div class="preco">R$ 350,00</div>
+                <ul>
+                    <li>PNG / JPG / PDF / SVG</li>
+                    <li>Manual Básico da Marca</li>
+                </ul>
+            </div>
+
+            <!-- Capas -->
+            <div class="card-servico">
+                <div class="icone">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.5">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 2v4M16 2v4M2 10h20"/>
+                    </svg>
+                </div>
+                <h4>📱 Capas Sociais</h4>
+                <div class="preco">R$ 250,00</div>
+                <ul>
+                    <li>Facebook / LinkedIn / YouTube</li>
+                    <li>3 Destaques Instagram</li>
+                </ul>
+            </div>
+
+            <!-- Edição -->
+            <div class="card-servico">
+                <div class="icone">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                    </svg>
+                </div>
+                <h4>✨ Edição de Imagens</h4>
+                <div class="preco">R$ 180,00</div>
+                <ul>
+                    <li>5 Fotos com retoque</li>
+                    <li>Cor, luz, remoção de fundo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACOTE COMPLETO -->
+    <section class="container">
+        <div class="pacote-completo">
+            <div class="info">
+                <h3>🔥 <span>Pacote Completo</span> (Tudo Incluso)</h3>
+                <div class="preco-grande">R$ 690,00</div>
+                <ul>
+                    <li>Logomarca Profissional</li>
+                    <li>Capas para Redes Sociais</li>
+                    <li>Edição de 5 Fotos</li>
+                    <li><strong>Bônus:</strong> Cartão Digital Interativo</li>
+                    <li><strong>Bônus:</strong> Botão WhatsApp</li>
+                    <li>Suporte 30 dias</li>
+                </ul>
+            </div>
+            <div class="cta-pacote">
+                <a href="#" class="btn-whats">📞 CHAME AGORA</a>
+                <small>Atendimento rápido e personalizado</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS / SELOS -->
+    <section class="container">
+        <div class="diferenciais">
+            <div class="item">
+                <div class="num">💯</div>
+                <p>Compromisso com seu sucesso</p>
+            </div>
+            <div class="item">
+                <div class="num">⚡</div>
+                <p>Entrega em alta resolução</p>
+            </div>
+            <div class="item">
+                <div class="num">🛡️</div>
+                <p>Arquivos vetoriais e fonte</p>
+            </div>
+            <div class="item">
+                <div class="num">🤝</div>
+                <p>Suporte direto via WhatsApp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <div class="logo-rodape">⭐ DIGITAL CHEVALIER CARD</div>
+            <p style="margin: 8px 0;">Agência de Inteligência Artificial · © 2026</p>
+            <p style="font-size: 13px;">Desenvolvido com precisão para sua marca</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="#" class="whatsapp-float">
+        <span class="icone-wpp">💬</span> Fale Conosco
+    </a>
+
+</body>
+</html>
 
