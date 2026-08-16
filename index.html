@@ -1,1 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolos e Doces da Suh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef8f5;  /* fundo claro e aconchegante */
+            color: #2d1b14;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER com a logo */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 3px solid #e8b4a2; /* tom rosê da logo */
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo .icone {
+            font-size: 36px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #a6533e; /* tom terroso/quente */
+            letter-spacing: -0.5px;
+        }
+
+        .logo h1 span {
+            color: #c2795e; /* tom mais claro */
+        }
+
+        .logo p {
+            font-size: 13px;
+            color: #7a5a4a;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .cta-header a {
+            background: #a6533e;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .cta-header a:hover {
+            background: #c2795e;
+            transform: scale(1.03);
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0 60px;
+            gap: 30px;
+        }
+
+        .hero-text {
+            flex: 1 1 480px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #f5e1d9;
+            color: #a6533e;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h2 {
+            font-size: 44px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h2 span {
+            color: #a6533e;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #5a4036;
+            max-width: 460px;
+            margin-bottom: 28px;
+        }
+
+        .hero-text .btn-principal {
+            background: #a6533e;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(166, 83, 62, 0.3);
+        }
+
+        .hero-text .btn-principal:hover {
+            background: #c2795e;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(166, 83, 62, 0.4);
+        }
+
+        .hero-image {
+            flex: 1 1 380px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image .ilustracao {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1/1;
+            background: linear-gradient(145deg, #fce9e2, #f5d6cb);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            border: 2px solid #e8b4a2;
+            box-shadow: 0 20px 60px rgba(166, 83, 62, 0.15);
+            color: #a6533e;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-image .ilustracao span {
+            font-size: 24px;
+            font-weight: 300;
+            color: #7a5a4a;
+            margin-top: 10px;
+        }
+
+        /* CARDÁPIO */
+        .cardapio {
+            padding: 60px 0;
+            border-top: 1px solid #e8d5cc;
+        }
+
+        .cardapio .titulo-secao {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cardapio .titulo-secao h3 {
+            font-size: 34px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cardapio .titulo-secao h3 span {
+            color: #a6533e;
+        }
+
+        .cardapio .titulo-secao p {
+            color: #7a5a4a;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .grid-doces {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .item-doce {
+            background: #fff;
+            border: 1px solid #f0dbd2;
+            border-radius: 24px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(166, 83, 62, 0.06);
+        }
+
+        .item-doce:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(166, 83, 62, 0.12);
+            border-color: #e8b4a2;
+        }
+
+        .item-doce .foto-placeholder {
+            width: 100%;
+            height: 120px;
+            background: #fcf1ec;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            border: 1px dashed #e8b4a2;
+        }
+
+        .item-doce h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d1b14;
+        }
+
+        .item-doce .preco {
+            font-size: 26px;
+            font-weight: 700;
+            color: #a6533e;
+            margin-top: 4px;
+        }
+
+        .item-doce .destaque {
+            background: #a6533e;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 14px;
+            border-radius: 30px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 6px;
+        }
+
+        /* BANNER PEDIDO */
+        .banner-pedido {
+            background: linear-gradient(145deg, #fce9e2, #f5d6cb);
+            border-radius: 40px;
+            padding: 50px 40px;
+            margin: 40px 0 60px;
+            border: 1px solid #e8b4a2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .banner-pedido .info {
+            flex: 1 1 400px;
+        }
+
+        .banner-pedido .info h3 {
+            font-size: 34px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .banner-pedido .info h3 span {
+            color: #a6533e;
+        }
+
+        .banner-pedido .info p {
+            color: #5a4036;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .banner-pedido .cta-whats {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .banner-pedido .cta-whats .btn-whats {
+            background: #25D366;
+            color: #fff;
+            padding: 18px 44px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .banner-pedido .cta-whats .btn-whats:hover {
+            background: #2ee673;
+            transform: scale(1.02);
+        }
+
+        .banner-pedido .cta-whats small {
+            display: block;
+            color: #7a5a4a;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .banner-pedido .cta-whats .telefone-destaque {
+            font-size: 22px;
+            font-weight: 700;
+            color: #a6533e;
+            margin-top: 4px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            border-top: 1px solid #e8d5cc;
+            padding: 30px 0;
+            text-align: center;
+            color: #7a5a4a;
+            font-size: 14px;
+        }
+
+        footer .logo-rodape {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #a6533e;
+        }
+
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 60px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background: #2ee673;
+        }
+
+        .whatsapp-float .icone-wpp {
+            font-size: 28px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .hero-text h2 {
+                font-size: 32px;
+            }
+            .banner-pedido {
+                padding: 30px 20px;
+            }
+            .banner-pedido .info h3 {
+                font-size: 26px;
+            }
+            .whatsapp-float {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            .cta-header a {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+            .hero-image .ilustracao {
+                font-size: 60px;
+            }
+            .logo h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER com a logo -->
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icone">🧁</span>
+                <div>
+                    <h1><span>BOLOS E DOCES</span> DA SUH</h1>
+                    <p>ARTESANAL · SABOR · ELEGÂNCIA</p>
+                </div>
+            </div>
+            <div class="cta-header">
+                <a href="https://wa.me/5575998001971">📞 (75) 99800-1971</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero container">
+        <div class="hero-text">
+            <span class="badge">🧁 FEITO COM AMOR</span>
+            <h2>Doçura artesanal com <span>toque de exclusividade</span></h2>
+            <p>Os melhores pudins, bolos de pote, mousses e bombons da região. Qualidade e sabor que conquistam.</p>
+            <a href="https://wa.me/5575998001971" class="btn-principal">QUERO FAZER MEU PEDIDO →</a>
+        </div>
+        <div class="hero-image">
+            <div class="ilustracao">
+                🍰
+                <span>Bolos & Doces</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section class="cardapio container">
+        <div class="titulo-secao">
+            <h3>Nosso <span>cardápio</span></h3>
+            <p>Escolha sua sobremesa favorita e peça agora mesmo!</p>
+        </div>
+
+        <div class="grid-doces">
+            <div class="item-doce">
+                <div class="foto-placeholder">🍮</div>
+                <h4>Pudim</h4>
+                <div class="preco">R$ 5,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🍇</div>
+                <h4>Bombom de Uva</h4>
+                <div class="preco">R$ 7,00</div>
+                <span class="destaque">+ Pedido</span>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🍫</div>
+                <h4>Bolo de Pote Chocolate</h4>
+                <div class="preco">R$ 6,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🥛</div>
+                <h4>Bolo de Pote Leite Ninho</h4>
+                <div class="preco">R$ 6,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🤎</div>
+                <h4>Bolo Ninho com Chocolate</h4>
+                <div class="preco">R$ 6,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🍰</div>
+                <h4>Pavê</h4>
+                <div class="preco">R$ 6,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🍓</div>
+                <h4>Mousse de Morango</h4>
+                <div class="preco">R$ 5,00</div>
+            </div>
+            <div class="item-doce">
+                <div class="foto-placeholder">🍋</div>
+                <h4>Mousse de Maracujá</h4>
+                <div class="preco">R$ 5,00</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER PEDIDO -->
+    <section class="container">
+        <div class="banner-pedido">
+            <div class="info">
+                <h3>📦 Peça agora pelo <span>WhatsApp</span></h3>
+                <p>Atendimento rápido, envio com cuidado e sabor garantido. Faça sua encomenda hoje mesmo!</p>
+            </div>
+            <div class="cta-whats">
+                <a href="https://wa.me/5575998001971" class="btn-whats">💬 QUERO ENCOMENDAR</a>
+                <small>Clique e fale diretamente</small>
+                <div class="telefone-destaque">(75) 99800-1971</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <div class="logo-rodape">🧁 BOLOS E DOCES DA SUH</div>
+            <p style="margin: 8px 0;">Feito com carinho · Sabor que emociona</p>
+            <p style="font-size: 13px;">📞 (75) 99800-1971 · © 2026</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5575998001971" class="whatsapp-float">
+        <span class="icone-wpp">💬</span> Peça pelo Zap
+    </a>
+
+</body>
+</html>
